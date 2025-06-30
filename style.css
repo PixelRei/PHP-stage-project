@@ -1,0 +1,30 @@
+body{
+    margin: 0 auto;
+    background-image: url(img/wallpaper.jpg);
+    background-size: cover;
+    color: white;
+    font-size: 22px;
+}
+.login-container{
+    margin: 140px;
+    margin-top: 220px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+}
+.header{
+    margin: 0 auto;
+    padding: 30px;
+    justify-content: center;
+}
+.modulo{
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
