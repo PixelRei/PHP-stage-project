@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Site</title>
+    <title>Create Account</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="login-container">
-        <div class="header">
+        <div class="modulo">
             <?php
             echo "<h1>Benvenuto!</h1>";
-            echo "<p>Effettua il login per poter accedere al sito</p>";
+            echo "<p>Inserisci le tue credenziali per creare l'account</p>";
             ?>
-        </div>
-        <div class="modulo">
-            <form action="index.php" method="POST" autocomplete="off">
+            <form action="welcome.php" method="POST" autocomplete="off">
                 <label for="username">Username</label><br>
                 <input type="text" id="username" name="username" required><br>
                 <label for="password">Password</label><br>
                 <input type="text" id="password" name="password" required>
                 <input type="submit" value="Login">
             </form>
-            <a id="option" href="create.php">Non hai un account? Crealo!</a>
         </div>
     </div>
 </body>
