@@ -21,7 +21,10 @@ body{
 .header{
     margin: 20px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .modulo{
     margin: 20px;
