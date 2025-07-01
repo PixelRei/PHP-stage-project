@@ -9,8 +9,10 @@
 <body>
     <div class="login-container">
         <div class="header">
-            <h1>Benvenuto!</h1>
-            <p>Effettua il login per poter accedere al sito</p>
+            <?php
+            echo "<h1>Benvenuto!</h1>";
+            echo "<p>Effettua il login per poter accedere al sito</p>"; 
+            ?>
         </div>
         <div class="modulo">
             <form action="welcome.php" method="POST" autocomplete="off">
