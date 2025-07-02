@@ -13,14 +13,14 @@
         $Username = $_POST['username'];
         $Password = $_POST['password'];
         $MyFile = fopen('credenziali.txt', 'a');
-        fwrite($MyFile, $Username . "|" . $Password."<br>");
+        fwrite($MyFile,"\n$Username|$Password");
         fclose($MyFile);
     ?>
     <div class="login-container">
         <div class="header">
             <?php
                 echo "Account creato con successo!";
-                echo '<a href="index.php"><button id="button">Torna al login</button></a>';
+                echo '<a id="created" href="index.php"><button id="button">Torna al login</button></a>';
             ?>
         </div>
         <div class="cutie-image">
