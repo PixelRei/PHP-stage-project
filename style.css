@@ -71,9 +71,9 @@ a:hover {
 }
 #button{
     margin: 20px;
-    margin-left: 40px;
-    width: 70px;
-    height: 30px;
+    margin-left: 50px;
+    width: 80px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,6 +87,26 @@ a:hover {
     background-color: rgb(153, 73, 227);
 }
 #created{
-    height: 10px;
     text-decoration: none;
+}
+#bottone{
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(120, 16, 218);
+    color: white;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px black; 
+}
+.go-back{
+    position: fixed;
+    bottom: 60px;
+    right: 500px;
+}
+.go-back:hover{
+    cursor: pointer;
 }

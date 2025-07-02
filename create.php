@@ -23,6 +23,7 @@
                 <input id="button" type="submit" value="Create">
             </form>
         </div>
+        <a href="index.php"><img class="go-back" src=img/back-removebg-preview.png width="50" alt="torna al login"></a>
     </div>
 </body>
 </html>

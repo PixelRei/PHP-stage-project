@@ -20,7 +20,7 @@
         <div class="header">
             <?php
                 echo "Account creato con successo!";
-                echo '<a id="created" href="index.php"><button id="button">Torna al login</button></a>';
+                echo '<a id="created" href="index.php"><button id="bottone">Torna al login</button></a>';
             ?>
         </div>
         <div class="cutie-image">
