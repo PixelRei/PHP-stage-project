@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Site</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/icon-removebg-preview.png">
+    <link rel="icon" href="img/moon-icon.png">
 </head>
 <body>
     <div class="login-container">

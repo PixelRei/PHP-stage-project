@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="img/icon-removebg-preview.png">
+    <link rel="icon" type="image/x-icon" href="img/moon-icon.png">
 </head>
 <body>
     <div class="login-container">
