@@ -11,7 +11,7 @@
 <body>
     <?php
         $Username = $_POST['username'];
-        $Password = $_POST['password'];
+        $Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $MyFile = fopen('credenziali.txt', 'a');
         fwrite($MyFile,"\n$Username|$Password");
         fclose($MyFile);

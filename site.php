@@ -19,7 +19,7 @@
                 $stringa = explode("|", $contenuto[$i]);
                 $utente = trim($stringa[0]);
                 $passaparola = trim($stringa[1]);
-                if($username == $utente && $password == $passaparola){
+                if($username == $utente && password_verify($password, $passaparola)){
                     $found = true;
                     break;
                 }
