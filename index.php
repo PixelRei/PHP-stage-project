@@ -22,7 +22,7 @@
                 <label for="password">Password</label><br>
                 <input type="password" id="password" name="password" required>
                 <br> 
-                <input type="submit" value="Login"> 
+                <input id="button" type="submit" value="Login"> 
             </form>
             <a id="option" href="create.php">Non hai un account? Crealo!</a>
         </div>

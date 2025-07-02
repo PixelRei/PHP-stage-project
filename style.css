@@ -8,6 +8,11 @@ body{
     background-size: cover;
     color: white;
     font-size: 22px;
+    font-family: 'Florence';
+}
+@font-face {
+    font-family: "Florence";
+    src: url(Florence\ PERSONAL\ USE\ ONLY!.ttf);
 }
 .login-container{
     margin: 0;
@@ -46,4 +51,15 @@ a:visited {
 a:hover {
     text-decoration: underline;
     color: #dcdcdc;
+}
+#username,
+#password{
+    border-radius: 10px;
+}
+#button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/wallpaper.jpg);
+    color: white;
 }

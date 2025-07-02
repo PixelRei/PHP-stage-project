@@ -27,7 +27,7 @@
             if($found == true){
                 echo "Accesso riuscito!";
             }else{
-                echo "Accesso negato!";
+                echo "Account non esistente!";
             }
         ?>
     </div>
