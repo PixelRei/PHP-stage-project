@@ -32,9 +32,10 @@
                 //controllo se l'array esiste, e verifica della password hashata
                 //l'utente è gia stato controllato a livello database con la query (WHERE)
                 if ($user && password_verify($password, $user['password'])) {
-                    echo "Login effettuato con successo!";
+                    include 'inside.php';
                 } else {
                     echo "Credenziali errate.";
+                    echo '<a id="created" href="index.php"><button id="bottone">Torna al login</button></a>';
                 }
             ?>
         </div>
