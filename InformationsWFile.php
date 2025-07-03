@@ -10,25 +10,11 @@
 </head>
 <body>
     <?php
-        //writing in the database username and password using PDO (PHP Data Object)
         $Username = $_POST['username'];
         $Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        //$Password = $_POST['password'];
-        try {
-            $hostname = '127.0.0.1';
-            $dbname = "mydatabse";
-            $user = 'root';
-            $pass = '';
-            $db = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $pass); //do not use '', you must use ""
-        } catch (PDOException $e) {
-            echo "Errore: ".$e->getMessage();
-            die();
-        }
-        $sql = "INSERT INTO utenti(username, password) VALUES (:username, :password)";
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(':username', $Username, PDO::PARAM_STR);
-        $stmt->bindValue(':password', $Password, PDO::PARAM_STR);
-        $stmt->execute();
+        $MyFile = fopen('credenziali.txt', 'a');
+        fwrite($MyFile,"\n$Username|$Password");
+        fclose($MyFile);
     ?>
     <div class="login-container">
         <div class="header">
