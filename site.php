@@ -11,7 +11,6 @@
     <body>
         <div class="login-container">
             <?php
-                //getting the informations from the database
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 try {
@@ -29,8 +28,9 @@
                 $stmt->execute([
                     'username' => $username
                 ]);
-                $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+                $user = $stmt->fetch(PDO::FETCH_ASSOC); //recupera il risultato della query
+                //controllo se l'array esiste, e verifica della password hashata
+                //l'utente è gia stato controllato a livello database con la query (WHERE)
                 if ($user && password_verify($password, $user['password'])) {
                     echo "Login effettuato con successo!";
                 } else {
