@@ -23,23 +23,18 @@
                 } catch (PDOException $e) {
                     echo "Errore: ".$e->getMessage();
                     die();
-                }
-                $sql = 'SELECT username, password FROM utenti';
+                };
+                $sql = 'SELECT username, password FROM utenti WHERE username = :username';
                 $stmt = $db->prepare($sql);
-                $stmt->execute();
-                $found = false;
+                $stmt->execute([
+                    'username' => $username
+                ]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                //using fetch
-                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    if($username == $row['username'] && $row['password']){
-                        $found = true;
-                        break;
-                    }
-                }
-                if($found == true){
-                    echo "Accesso riuscito!";
-                }else{
-                    echo "Account non esistente!";
+                if ($user && password_verify($password, $user['password'])) {
+                    echo "Login effettuato con successo!";
+                } else {
+                    echo "Credenziali errate.";
                 }
             ?>
         </div>
