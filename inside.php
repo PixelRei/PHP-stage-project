@@ -36,7 +36,6 @@ if(!isset($_SESSION['username'])){
                 <th>USERNAME</th>
             </tr>
             <?php
-                $ID = 1;
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     echo "<tr>";
                     echo "<td>".$row['id']."</td>";
