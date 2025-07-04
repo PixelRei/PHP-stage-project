@@ -2,10 +2,12 @@ body{
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: url(img/wallpaper.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     font-size: 37px;
     font-family: 'Surprise';
@@ -22,6 +24,9 @@ h1{
     font-family: 'Surprise';
     src: url(Surprise\ Birthday.otf);
 }
+/*.modify-container{
+
+}*/
 .login-container{
     margin: 0;
     padding: 50px;
@@ -48,12 +53,31 @@ h1{
     justify-self: center;
     align-items: center;
 }
+.panel{
+    display: flex;
+    flex-direction: row;
+    gap: 170px;
+}
+.info{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.change form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .inside-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.buttons{
+    display: flex;
+}
+/*
 textarea {
   width: 100%;
   height: 250px;
@@ -64,13 +88,14 @@ textarea {
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;/*annulla il resize*/
-}/*per utilizzo della textarea
+/*per utilizzo della textarea
 textarea:focus, input:focus{
     outline: none;
 }*/
 table{
-    background-color: white;
-    color: black;
+    background-image: url(img/wallpaper2.jpg);
+    background-size: cover;
+    color: white;
     text-align: center;
 }
 td, th, table{
@@ -88,6 +113,9 @@ a:visited {
 a:hover {
     text-decoration: underline;
     color: #dcdcdc;
+}
+.credentials{
+    margin-top: 15px;
 }
 #username,
 #password{

@@ -46,7 +46,10 @@ if(!isset($_SESSION['username'])){
             ?>
         </table>
         <br>
-        <a href="logout.php" id="created"><button id="button">Logout</button></a>
+        <div class="buttons">
+            <a href="logout.php" id="created"><button id="button">Logout</button></a>
+            <a href="modify.php" id="created"><button id="button">Modifica utente</button></a>
+        </div>
     </div>
 </body>
 </html>
