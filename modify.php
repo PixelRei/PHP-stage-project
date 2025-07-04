@@ -25,11 +25,11 @@ $id = $_SESSION['id'];
                 <p class="credentials">Password: <?=$password?></p>
             </div>
             <div class="change">
-                <form method="POST">
+                <form method="POST" autocomplete="off">
                 <label for="username">Nuovo username:</label>
                 <input type="text" name="username" required>
                 <label for="password">Nuova password:</label>
-                <input type="text" name="password" required>
+                <input type="password" name="password" required>
                 <input id="button" type="submit" name="submit" value="Modifica">
                 </form>
             </div>

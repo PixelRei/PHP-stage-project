@@ -26,19 +26,18 @@
                     echo "Errore: ".$e->getMessage();
                     die();
                 };
-                $sql = 'SELECT username, password FROM people WHERE username = :username';
+                $sql = 'SELECT id, username, password FROM people WHERE username = :username';
                 $stmt = $db->prepare($sql);
                 $stmt->execute([
                     'username' => $username
                 ]);
-                $id = $db->lastInsertId();
                 $user = $stmt->fetch(PDO::FETCH_ASSOC); //recupera il risultato della query
                 //controllo se l'array esiste, e verifica della password hashata
                 //l'utente è gia stato controllato a livello database con la query (WHERE)
                 if ($user && password_verify($password, $user['password'])) {
                     $_SESSION['username'] = $username;
                     $_SESSION['password'] = $password;
-                    $_SESSION['id'] = $id;
+                    $_SESSION['id'] = $user['id'];
                     include 'inside.php';
                 } else {
                     echo "Credenziali errate.";
