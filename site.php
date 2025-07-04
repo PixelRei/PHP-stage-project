@@ -12,7 +12,7 @@
 
     </head>
     <body>
-        <div class="login-container">
+        <div class="error">
             <?php
                 $username = $_POST['username'];
                 $password = $_POST['password'];

@@ -23,6 +23,7 @@ $id = $_SESSION['id'];
             <div class="info">
                 <p class="credentials">Username: <?=$username?></p>
                 <p class="credentials">Password: <?=$password?></p>
+                <a href="site.php"><button id="button">Back</button>
             </div>
             <div class="change">
                 <form method="POST" autocomplete="off">
