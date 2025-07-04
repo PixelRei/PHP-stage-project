@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['username'])){
+    header ("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +24,7 @@
             echo $e->getMessage();
             die();
         }
-        $sql = "SELECT username FROM utenti";
+        $sql = "SELECT username FROM people";
         $stmt = $db->prepare($sql);
         $stmt->execute();
     ?>
@@ -36,6 +41,8 @@
                 }
             ?>
         </textarea>
+        <br>
+        <a href="logout.php" id="created"><button id="button">Logout</button></a>
     </div>
 </body>
 </html>

@@ -24,7 +24,7 @@
             echo "Errore: ".$e->getMessage();
             die();
         }
-        $sql = "INSERT INTO utenti(username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO people(username, password) VALUES (:username, :password)";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':username', $Username, PDO::PARAM_STR);
         $stmt->bindValue(':password', $Password, PDO::PARAM_STR);

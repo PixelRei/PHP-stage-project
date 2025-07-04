@@ -1,3 +1,6 @@
+    <?php
+    session_start();
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -23,7 +26,7 @@
                     echo "Errore: ".$e->getMessage();
                     die();
                 };
-                $sql = 'SELECT username, password FROM utenti WHERE username = :username';
+                $sql = 'SELECT username, password FROM people WHERE username = :username';
                 $stmt = $db->prepare($sql);
                 $stmt->execute([
                     'username' => $username
@@ -32,6 +35,7 @@
                 //controllo se l'array esiste, e verifica della password hashata
                 //l'utente è gia stato controllato a livello database con la query (WHERE)
                 if ($user && password_verify($password, $user['password'])) {
+                    $_SESSION['username'] = $username;
                     include 'inside.php';
                 } else {
                     echo "Credenziali errate.";
