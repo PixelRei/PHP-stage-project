@@ -24,23 +24,27 @@ if(!isset($_SESSION['username'])){
             echo $e->getMessage();
             die();
         }
-        $sql = "SELECT username FROM people";
+        $sql = "SELECT username, id FROM people";
         $stmt = $db->prepare($sql);
         $stmt->execute();
     ?>
     <div class="inside-container">
         <h1>Utenti che utilizzano il sito</h1>
-        <textarea readonly>
+        <table style="width:70%">
+            <tr>
+                <th>ID</th>
+                <th>USERNAME</th>
+            </tr>
             <?php
                 $ID = 1;
-                $space = "                 ";
-                echo "ID".$space."USERNAME\n";
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    echo "\n             "."$ID".$space.$row['username'];
-                    $ID++;
+                    echo "<tr>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['username']."</td>";
+                    echo "</tr>";
                 }
             ?>
-        </textarea>
+        </table>
         <br>
         <a href="logout.php" id="created"><button id="button">Logout</button></a>
     </div>
