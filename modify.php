@@ -22,7 +22,6 @@ $id = $_SESSION['id'];
             <div class="info">
                 <p class="credentials">Username: <?=$username?></p>
                 <p class="credentials">Password: <?=$password?></p>
-                <a id="created" href="site.php"><button id="button">Back</button></a>
             </div>
             <div class="change">
                 <form method="POST" autocomplete="off">
@@ -30,7 +29,7 @@ $id = $_SESSION['id'];
                 <input type="text" name="username" required>
                 <label for="password">Nuova password:</label>
                 <input type="password" name="password" required>
-                <a id="created" href="index.php"><input class="modify_button" id="button" type="submit" name="submit" value="Modifica"></a>
+                <a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>
                 </form>
             </div>
             <?php   
@@ -58,6 +57,8 @@ $id = $_SESSION['id'];
                 $stmt->bindValue(':password', $new_password, PDO::PARAM_STR);
                 $stmt->bindValue(':id', $id, PDO::PARAM_STR);
                 $stmt->execute();
+                header("Location: index.php");
+                exit();
                 }
             ?>
         </div>

@@ -17,7 +17,10 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
     <div class="login-container">
-        <h1>logout effettuato</h1>
+        <div class="info">
+            <h1>logout effettuato</h1>
+            <a id="created" href="index.php"><button id="button">Torna al login</button></a> 
+        </div>
     </div>
 </body>
 </html>
