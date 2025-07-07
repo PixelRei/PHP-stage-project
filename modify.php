@@ -2,7 +2,6 @@
 session_start();
 if(!isset($_SESSION['username'])){
     header ("Location: index.php");
-    exit();
 }
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
@@ -23,7 +22,7 @@ $id = $_SESSION['id'];
             <div class="info">
                 <p class="credentials">Username: <?=$username?></p>
                 <p class="credentials">Password: <?=$password?></p>
-                <a href="site.php"><button id="button">Back</button>
+                <a id="created" href="site.php"><button id="button">Back</button></a>
             </div>
             <div class="change">
                 <form method="POST" autocomplete="off">
@@ -31,7 +30,7 @@ $id = $_SESSION['id'];
                 <input type="text" name="username" required>
                 <label for="password">Nuova password:</label>
                 <input type="password" name="password" required>
-                <input id="button" type="submit" name="submit" value="Modifica">
+                <a id="created" href="site.php"><input class="modify_button" id="button" type="submit" name="submit" value="Modifica"></a>
                 </form>
             </div>
             <?php
@@ -63,6 +62,6 @@ $id = $_SESSION['id'];
             ?>
         </div>
     </div>
-
+<script src="script.js"></script>
 </body>
 </html>
