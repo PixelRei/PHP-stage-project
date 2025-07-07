@@ -83,6 +83,9 @@ h1{
     flex-direction: column;
     text-decoration: none;
 }
+.change{
+    padding-bottom: 68px;
+}
 .change form{
     display: flex;
     text-decoration: none;
