@@ -65,18 +65,23 @@ h1{
     align-items: center;
 }
 .panel{
+    margin: 0;
+    padding: 50px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
     flex-direction: row;
-    gap: 150px;
+    gap: 120px;
+    width: 70%;
 }
 .info{
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-}
-.change{
-    margin: 12px;
 }
 .change form{
     display: flex;
@@ -92,6 +97,10 @@ h1{
 }
 .buttons{
     display: flex;
+}
+.image-uploader{
+    margin: 0;
+    width: 20%;
 }
 /*
 textarea {
