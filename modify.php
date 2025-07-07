@@ -22,6 +22,11 @@ $id = $_SESSION['id'];
             <div class="info">
                 <p class="credentials">Username: <?=$username?></p>
                 <p class="credentials">Password: <?=$password?></p>
+                <form method="POST" enctype="multipart/form-data" class="image">
+                    <label for="image">Carica immagine:</label>
+                    <input type="file" name="image" required>
+                    <input type="submit" name="submit" value="Upload" id="button">
+                </form>
             </div>
             <div class="change">
                 <form method="POST" autocomplete="off">
@@ -58,7 +63,7 @@ $id = $_SESSION['id'];
                 $stmt->bindValue(':id', $id, PDO::PARAM_STR);
                 $stmt->execute();
                 header("Location: index.php");
-                exit();
+                exit;
                 }
             ?>
         </div>
