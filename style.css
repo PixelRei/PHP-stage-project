@@ -67,7 +67,7 @@ h1{
 .panel{
     display: flex;
     flex-direction: row;
-    gap: 170px;
+    gap: 150px;
 }
 .info{
     margin-top: 10px;
@@ -187,7 +187,15 @@ a:hover {
     cursor: pointer;
 }
 .image{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.808);
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap:10px;
 }
