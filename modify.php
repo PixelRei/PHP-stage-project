@@ -30,10 +30,10 @@ $id = $_SESSION['id'];
                 <input type="text" name="username" required>
                 <label for="password">Nuova password:</label>
                 <input type="password" name="password" required>
-                <a id="created" href="site.php"><input class="modify_button" id="button" type="submit" name="submit" value="Modifica"></a>
+                <a id="created" href="index.php"><input class="modify_button" id="button" type="submit" name="submit" value="Modifica"></a>
                 </form>
             </div>
-            <?php
+            <?php   
                 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){ //condition to see if the form was sent correctly
                     
                 //update the session
@@ -62,6 +62,5 @@ $id = $_SESSION['id'];
             ?>
         </div>
     </div>
-<script src="script.js"></script>
 </body>
 </html>
