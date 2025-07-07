@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
                 <form method="POST" enctype="multipart/form-data" class="image">
                     <label for="image">Carica immagine:</label>
                     <input type="file" name="image" required>
-                    <input type="submit" name="submit" value="Upload" id="button">
+                    <input type="submit" name="submit-image" value="Upload" id="button">
                 </form>
             </div>
             <div class="change">
@@ -44,9 +44,9 @@ $id = $_SESSION['id'];
                 $new_username = $_POST['username'];
                 $new_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $_SESSION['username'] = $new_username;
-                $_SESSION['password'] = $new_password;
+                $_SESSION['password'] = $_POST['password'];
                 //and also the database
-                try {
+                try {   
                     $hostname = '127.0.0.1';
                     $dbname = 'mydatabse';
                     $user = 'root';
@@ -71,7 +71,7 @@ $id = $_SESSION['id'];
             $uploadOk = 0;
             $targetFile = "";
 
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['submit-image'])) {
                 if (isset($_FILES["image"])) {
                     $directory = 'uploads/';
                     $targetFile = $directory . basename($_FILES["image"]["name"]);
@@ -87,11 +87,11 @@ $id = $_SESSION['id'];
                         $uploadOk = 0;
                     }
 
-                    // Controlla se il file esiste già
+                    /* Controlla se il file esiste già
                     if (file_exists($targetFile)) {
                         echo "Il file esiste già.<br>";
                         $uploadOk = 0;
-                    }
+                    }*/
 
                     // Controlla la dimensione del file
                     if ($_FILES["image"]["size"] > 500000) {
@@ -117,9 +117,20 @@ $id = $_SESSION['id'];
                     }
                 }
             }
-            $sql = "INSERT INTO people (image) VALUES (:file) WHERE id = :id";
-            $stmt = $sql->bindValue(':file', $targetFile, PDO::PARAM_STR);
-            $stmt = $sql->bindValue(':id', $_SESSION['id'], PDO::PARAM_STR);
+            try {
+                    $hostname = '127.0.0.1';
+                    $dbname = 'mydatabse';
+                    $user = 'root';
+                    $pass = '';
+                    $db = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $pass);
+                } catch (PDOException $e) {
+                    echo "error: ".$e->getMessage();
+                    die();
+                }
+            $sql = "UPDATE people SET image = :targetFile WHERE id = :id";
+            $stmt= $db->prepare($sql);
+            $stmt->bindValue(':targetFile', $targetFile, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
             $stmt->execute();
             ?>
         </div>
