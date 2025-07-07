@@ -67,62 +67,61 @@ $id = $_SESSION['id'];
                 }
             ?>
             <!---script for image management--->
-<?php
-$uploadOk = 0;
-$targetFile = "";
-
-if (isset($_POST['submit'])) {
-    if (isset($_FILES["image"])) {
-        $directory = 'uploads/';
-        $targetFile = $directory . basename($_FILES["image"]["name"]);
-        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
-        // Controlla se è un'immagine
-        $check = getimagesize($_FILES["image"]["tmp_name"]);
-        if ($check !== false) {
-            echo "Il file è un'immagine - " . $check["mime"] . ".<br>";
-            $uploadOk = 1;
-        } else {
-            echo "Il file non è un'immagine.<br>";
+            <?php
             $uploadOk = 0;
-        }
+            $targetFile = "";
 
-        // Controlla se il file esiste già
-        if (file_exists($targetFile)) {
-            echo "Il file esiste già.<br>";
-            $uploadOk = 0;
-        }
+            if (isset($_POST['submit'])) {
+                if (isset($_FILES["image"])) {
+                    $directory = 'uploads/';
+                    $targetFile = $directory . basename($_FILES["image"]["name"]);
+                    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-        // Controlla la dimensione del file
-        if ($_FILES["image"]["size"] > 500000) {
-            echo "Il file è troppo grande.<br>";
-            $uploadOk = 0;
-        }
+                    // Controlla se è un'immagine
+                    $check = getimagesize($_FILES["image"]["tmp_name"]);
+                    if ($check !== false) {
+                        echo "Il file è un'immagine - " . $check["mime"] . ".<br>";
+                        $uploadOk = 1;
+                    } else {
+                        echo "Il file non è un'immagine.<br>";
+                        $uploadOk = 0;
+                    }
 
-        // Controlla il formato del file
-        if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
-            echo "Solamente i file JPG, JPEG, PNG & GIF sono accettati.<br>";
-            $uploadOk = 0;
-        }
+                    // Controlla se il file esiste già
+                    if (file_exists($targetFile)) {
+                        echo "Il file esiste già.<br>";
+                        $uploadOk = 0;
+                    }
 
-        // Prova a caricare il file
-        if ($uploadOk == 0) {
-            echo "Il file non è stato caricato correttamente.<br>";
-        } else {
-            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                echo "Il file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " è stato caricato con successo.<br>";
-            } else {
-                echo "C'è stato un errore durante il caricamento.<br>";
+                    // Controlla la dimensione del file
+                    if ($_FILES["image"]["size"] > 500000) {
+                        echo "Il file è troppo grande.<br>";
+                        $uploadOk = 0;
+                    }
+
+                    // Controlla il formato del file
+                    if (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
+                        echo "Solamente i file JPG, JPEG, PNG & GIF sono accettati.<br>";
+                        $uploadOk = 0;
+                    }
+
+                    // Prova a caricare il file
+                    if ($uploadOk == 0) {
+                        echo "Il file non è stato caricato correttamente.<br>";
+                    } else {
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+                            echo "Il file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " è stato caricato con successo.<br>";
+                        } else {
+                            echo "C'è stato un errore durante il caricamento.<br>";
+                        }
+                    }
+                }
             }
-        }
-    }
-}
-?>
-
-<h2>Immagine caricata:</h2>
-<?php if ($uploadOk == 1): ?>
-    <img src="<?php echo $targetFile; ?>" alt="Uploaded Image" style="max-width:300px;">
-<?php endif; ?>
+            $sql = "INSERT INTO people (image) VALUES (:file) WHERE id = :id";
+            $stmt = $sql->bindValue(':file', $targetFile, PDO::PARAM_STR);
+            $stmt = $sql->bindValue(':id', $_SESSION['id'], PDO::PARAM_STR);
+            $stmt->execute();
+            ?>
         </div>
     </div>
 </body>
