@@ -24,9 +24,6 @@ h1{
     font-family: 'Surprise';
     src: url(Surprise\ Birthday.otf);
 }
-/*.modify-container{
-
-}*/
 .login-container{
     margin: 0;
     padding: 50px;
@@ -104,6 +101,19 @@ h1{
 .image-uploader{
     margin: 0;
     width: 20%;
+}
+.admin-panel{
+    padding: 20px;
+    background-color: rgba(112, 75, 222, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+.others{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
 }
 /*
 textarea {
@@ -210,4 +220,10 @@ a:hover {
     justify-content: center;
     text-align: center;
     gap:10px;
+}
+select{
+    width: 200px;
+    height: 80px;
+    font-size: 18px;
+    border-radius: 10px;
 }

@@ -12,7 +12,6 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
     <?php
-        $num_utenti = "tredici";
         //collegamento al database
         try {
             $hostname = '127.0.0.1';
