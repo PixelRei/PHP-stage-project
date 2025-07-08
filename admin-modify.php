@@ -15,30 +15,11 @@
         <link rel="icon" href="img/moon-icon.png">
     </head>
     <body>
-        <?php
-            try {
-                $hostname = '127.0.0.1';
-                $dbname = 'mydatabse';
-                $user = 'root';
-                $pass = '';
-                $db = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $pass);
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-                die();
-            }
-            $sql = "SELECT password FROM people WHERE username = :username";
-            $stmt = $db->prepare($sql);
-            $stmt->execute([
-                'username' => $username
-            ]);
-            $pass = $stmt->fetch(PDO::FETCH_ASSOC);
-        ?>
-        <div class="panel">
+        <div class="admin-modifies">
             <div class="info">
-                <p id="user" class="credentials">Username: <?=$username?></p>
-                <p id="pass" class="credentials">Password: <?=$pass['password']?></p>
+                <p id="user" class="credentials">User selezionato: <?=$username?></p>
             </div>
-            <div class="change">
+            <div class="admin-changes">
                 <form method="POST" autocomplete="off">
                 <label for="username">Nuovo username:</label>
                 <input type="text" name="username" required>
@@ -67,11 +48,11 @@
                 echo "error: ".$e->getMessage();
                 die();
             }
-            $sql = "UPDATE people SET username = :username, password = :password WHERE id = :id";
+            $sql = "UPDATE people SET username = :username, password = :password WHERE username = :old_username";
             $stmt = $db->prepare($sql);
             $stmt->bindValue(':username', $new_username, PDO::PARAM_STR);
             $stmt->bindValue(':password', $new_password, PDO::PARAM_STR);
-            $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+            $stmt->bindValue(':old_username', $username, PDO::PARAM_STR);
             $stmt->execute();
             header("Location: index.php");
             //exit;

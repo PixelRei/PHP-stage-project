@@ -123,21 +123,28 @@ h1{
     justify-content: center;
     gap: 15px;
 }
-/*
-textarea {
-  width: 100%;
-  height: 250px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;/*annulla il resize*/
-/*per utilizzo della textarea
-textarea:focus, input:focus{
-    outline: none;
-}*/
+/*parte css per admin-modify*/
+.admin-modifies{
+    margin: 0;
+    padding: 50px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
+    gap: 200px;
+}
+.admin-changes{
+    margin-top: 20px;
+}
+.admin-changes form{
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    gap: 15px;
+}
 table{
     background-image: url(img/wallpaper2.jpg);
     background-size: cover;
