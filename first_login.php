@@ -35,8 +35,8 @@
             header('Location: inside.php');
             exit;
         } else {
-            echo "Credenziali errate.";
-            echo '<a id="created" href="index.php"><button id="bottone">Torna al login</button></a>';
+            header("Location: login_error.php");
+            exit;
         }
     }
 ?>

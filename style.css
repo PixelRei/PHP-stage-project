@@ -90,10 +90,14 @@ h1{
     gap: 15px;
 }
 .inside-container{
+    margin: 0;
+    padding: 35px;
+    background-color: rgba(112, 75, 222, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 15px;
 }
 .buttons{
     display: flex;
