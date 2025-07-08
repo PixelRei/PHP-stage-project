@@ -16,11 +16,11 @@
 <body>
     <?php
         try {
-                $hostname = '127.0.0.1';
-                $dbname = 'mydatabse';
-                $user = 'root';
-                $pass = '';
-                $db = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $pass);
+            $hostname = '127.0.0.1';
+            $dbname = 'mydatabse';
+            $user = 'root';
+            $pass = '';
+            $db = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $pass);
         } catch (PDOException $e) {
             echo $e->getMessage();
             die();
