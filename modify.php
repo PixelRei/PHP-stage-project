@@ -63,7 +63,7 @@ $id = $_SESSION['id'];
                     $stmt->bindValue(':id', $id, PDO::PARAM_STR);
                     $stmt->execute();
                     header("Location: index.php");
-                    exit;
+                    //exit;
                     }
                 ?>
                 <!---script for image management--->

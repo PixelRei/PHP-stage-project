@@ -35,7 +35,7 @@
         </div>
         <div class="others">
             <div class="users">
-                <select>
+                <select id="options">
                     <?php
                         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                             if($row['username'] != 'admin'){
@@ -47,8 +47,9 @@
                     ?>
                 </select>
             </div>
-            <a id="created" href="admin-modify.php"><button id ="button">Modifica</button></a>
+            <a id="created" href="admin-modify.php"><button class="modifier" id ="button">Modifica</button></a>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
