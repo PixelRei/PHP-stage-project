@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     modifier.addEventListener("click", function(){
         const SelectedOption = document.getElementById("options").value;
-        
+        username.innerHTML = "Username: " + SelectedOption;
     });
 });

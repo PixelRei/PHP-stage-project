@@ -35,19 +35,22 @@
         </div>
         <div class="others">
             <div class="users">
-                <select id="options">
-                    <?php
-                        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            if($row['username'] != 'admin'){
-                                echo "<option>";
-                                echo $row['username'];
-                                echo "</option>";
+                <form action="admin-modify.php" method="GET">
+                    <label>Selezionane uno da modificare:</label>
+                    <select id="options" name="user">
+                        <?php
+                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                if($row['username'] != 'admin'){
+                                    echo "<option>";
+                                    echo $row['username'];
+                                    echo "</option>";
+                                }
                             }
-                        }
-                    ?>
-                </select>
+                        ?>
+                    </select>
+                    <input class="modifier" id ="button" type="submit" value="modifica">
+                </form>
             </div>
-            <a id="created" href="admin-modify.php"><button class="modifier" id ="button">Modifica</button></a>
         </div>
     </div>
     <script src="script.js"></script>

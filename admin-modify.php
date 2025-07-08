@@ -3,7 +3,7 @@
     if(!isset($_SESSION['username'])){
         header("Location: index.php");
     }
-    
+    $username = $_GET['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +26,17 @@
                 echo $e->getMessage();
                 die();
             }
-            $sql = "SELECT username FROM people";
+            $sql = "SELECT password FROM people WHERE username = :username";
             $stmt = $db->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([
+                'username' => $username
+            ]);
+            $pass = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class="panel">
             <div class="info">
-                <p id="user" class="credentials">Username: <?=/*$username*/ "Marcolino"?></p>
-                <p id="pass" class="credentials">Password: <?=/*$password*/ "Il boss"?></p>
+                <p id="user" class="credentials">Username: <?=$username?></p>
+                <p id="pass" class="credentials">Password: <?=$pass['password']?></p>
             </div>
             <div class="change">
                 <form method="POST" autocomplete="off">
