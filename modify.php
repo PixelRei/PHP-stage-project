@@ -20,7 +20,6 @@ $id = $_SESSION['id'];
         <div class="panel">
             <div class="info">
                 <p class="credentials">Username: <?=$username?></p>
-                <p class="credentials">Password: <?=$password?></p>
                 <form method="POST" enctype="multipart/form-data" class="image">
                     <label for="image">Carica immagine:</label>
                     <input type="file" name="image" required>
@@ -30,9 +29,9 @@ $id = $_SESSION['id'];
             <div class="change">
                 <form method="POST" autocomplete="off">
                 <label for="username">Nuovo username:</label>
-                <input type="text" name="username" required placeholder="New Username">
+                <input class="input-log" type="text" name="username" required placeholder="New Username">
                 <label for="password">Nuova password:</label>
-                <input type="password" name="password" required placeholder="New Password">
+                <input class="input-log" type="password" name="password" required placeholder="New Password">
                 <a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>
                 </form>
             </div>
@@ -69,7 +68,7 @@ $id = $_SESSION['id'];
                 <!---script for image management--->
                 <?php
                 $uploadOk = 0;
-                $targetFile = "";
+                $filename = '';
 
                 if (isset($_POST['submit-image'])) {
                     if (isset($_FILES["image"])) {
@@ -111,6 +110,7 @@ $id = $_SESSION['id'];
                         } else {
                             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                                 echo "Il file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " è stato caricato con successo.<br>";
+                                $filename = htmlspecialchars(basename($_FILES["image"]["name"]));
                             } else {
                                 echo "C'è stato un errore durante il caricamento.<br>";
                             }
@@ -127,9 +127,9 @@ $id = $_SESSION['id'];
                         echo "error: ".$e->getMessage();
                         die();
                     }
-                $sql = "UPDATE people SET image = :targetFile WHERE id = :id";
+                $sql = "UPDATE people SET image = :filename WHERE id = :id";
                 $stmt= $db->prepare($sql);
-                $stmt->bindValue(':targetFile', $targetFile, PDO::PARAM_STR);
+                $stmt->bindValue(':filename', $filename, PDO::PARAM_STR);
                 $stmt->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
                 $stmt->execute();
                 ?>

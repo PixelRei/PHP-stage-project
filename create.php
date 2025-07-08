@@ -16,9 +16,9 @@
             ?>
             <form action="informations.php" method="POST" autocomplete="off">
                 <label for="username">Username</label><br>
-                <input type="text" id="username" name="username" required><br>
+                <input type="text" id="username" name="username" required placeholder="Username"><br>
                 <label for="password">Password</label><br>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="Password">
                 <br>
                 <input id="button" type="submit" value="Create">
             </form>
