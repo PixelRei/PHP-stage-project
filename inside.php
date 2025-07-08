@@ -26,7 +26,7 @@
                 echo $e->getMessage();
                 die();
             }
-            $sql = "SELECT username, id FROM people";
+            $sql = "SELECT username, id, image FROM people";
             $stmt = $db->prepare($sql);
             $stmt->execute();
         ?>
@@ -36,17 +36,17 @@
                 <tr>
                     <th>ID</th>
                     <th>USERNAME</th>
+                    <th>IMAGE</th>
                 </tr>
-                <?php
-                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
-                        if($row['username'] != 'admin'){
-                            echo "<tr>";
-                            echo "<td>".$row['id']."</td>";
-                            echo "<td>".$row['username']."</td>";
-                            echo "</tr>";
-                        }
-                    }
-                ?>
+                <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                        <?php if($row['username'] != 'admin'): ?>
+                            <tr>
+                                <td> <?= $row['id'] ?></td>
+                                <td><?=$row['username'] ?></td>
+                                <td><img src="uploads/<?=$row['image'] ?>" width="10%" alt="null"></td>
+                            </tr>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
             </table>
             <br>
             <div class="buttons">

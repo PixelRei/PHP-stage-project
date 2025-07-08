@@ -4,6 +4,7 @@
         header("Location: index.php");
     }
     $username = $_GET['user'];
+    $_SESSION['abc'] = $username; //they never gonna know :)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,14 @@
                 <label for="password">Nuova password:</label>
                 <input class="input-log" type="password" name="password" required placeholder="New Password">
                 <a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>
+                </form>
+            </div>
+            <div class="status">
+                <p>Attiva/Disattiva account:
+                <form action="activation.php" method="POST">
+                    <label><input type="checkbox" name="stato" value="1">Attiva</label>
+                    <label><input type="checkbox" name="stato" value="0">Disattiva</label>
+                    <input type="submit" value="Modifica" id="button">
                 </form>
             </div>
         </div>

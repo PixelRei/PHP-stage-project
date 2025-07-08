@@ -10,7 +10,7 @@
 <body>
     <div class="inside-container">
         <?php
-            echo "Credenziali errate/Account insesistente";
+            echo "Credenziali errate / Account insesistente o sospeso";
             echo '<a id="created" href="index.php"><button id="bottone">Torna al login</button></a>';
         ?>
     </div>

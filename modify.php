@@ -136,6 +136,7 @@ $id = $_SESSION['id'];
                 <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
                     <img src="<?php echo $targetFile; ?>"width="80%" alt="Uploaded Image">
                 <?php endif; ?>
+                <a id="created" href="inside.php"><button id="button">Torna alla tabella</button></a>
             </div>
         </div>
 </body>
