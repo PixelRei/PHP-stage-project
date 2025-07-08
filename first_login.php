@@ -1,12 +1,13 @@
 <?php
     session_start();
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header("Location: index.php");
-        exit;
+    if(!isset($_SESSION['username'])){
+        header ("Location: index.php");
     }
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if($username == 'admin' && $password == 'admin127001'){
+    if($username == "admin" && $password == "admin127001"){
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header("Location: admin.php");
         exit;
     }else{
