@@ -38,11 +38,13 @@
                     <th>USERNAME</th>
                 </tr>
                 <?php
-                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        echo "<tr>";
-                        echo "<td>".$row['id']."</td>";
-                        echo "<td>".$row['username']."</td>";
-                        echo "</tr>";
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
+                        if($row['username'] != 'admin'){
+                            echo "<tr>";
+                            echo "<td>".$row['id']."</td>";
+                            echo "<td>".$row['username']."</td>";
+                            echo "</tr>";
+                        }
                     }
                 ?>
             </table>

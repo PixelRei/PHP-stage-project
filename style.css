@@ -245,3 +245,7 @@ select{
     height: 55px;
     font-size: 18px;
 }
+input{
+    border-radius: 10px;
+    height: 20px;
+}

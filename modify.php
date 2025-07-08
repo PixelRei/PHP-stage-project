@@ -30,9 +30,9 @@ $id = $_SESSION['id'];
             <div class="change">
                 <form method="POST" autocomplete="off">
                 <label for="username">Nuovo username:</label>
-                <input type="text" name="username" required>
+                <input type="text" name="username" required placeholder="New Username">
                 <label for="password">Nuova password:</label>
-                <input type="password" name="password" required>
+                <input type="password" name="password" required placeholder="New Password">
                 <a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>
                 </form>
             </div>
