@@ -32,7 +32,7 @@
             <div class="status">
                 <p>Attiva/Disattiva account:
                 <form action="activation.php" method="POST">
-                    <label><input type="checkbox" name="stato" value="1">Attiva</label>
+                    <label><input type="checkbox" checked name="stato" value="1">Attiva</label>
                     <label><input type="checkbox" name="stato" value="0">Disattiva</label>
                     <input type="submit" value="Modifica" id="button">
                 </form>
@@ -63,8 +63,8 @@
             $stmt->bindValue(':password', $new_password, PDO::PARAM_STR);
             $stmt->bindValue(':old_username', $username, PDO::PARAM_STR);
             $stmt->execute();
-            header("Location: index.php");
-            //exit;
+            header("Location: modify.php");
+            exit;
             }
         ?>
         <div class="footer" style="padding-top: 10px;">

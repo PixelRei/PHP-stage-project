@@ -33,23 +33,25 @@
         <div class="header">
             <h1>Utenti modificabili</h1>
         </div>
-        <div class="others">
-            <div class="users">
-                <form action="admin-modify.php" method="GET">
-                    <label>Selezionane uno da modificare:</label>
-                    <select id="options" name="user">
-                        <?php
-                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                if($row['username'] != 'admin'){
-                                    echo "<option>";
-                                    echo $row['username'];
-                                    echo "</option>";
+        <div class="wall">
+            <div class="others">
+                <div class="users">
+                    <form action="admin-modify.php" method="GET">
+                        <label>Selezionane uno da modificare:</label>
+                        <select id="options" name="user">
+                            <?php
+                                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                    if($row['username'] != 'admin'){
+                                        echo "<option>";
+                                        echo $row['username'];
+                                        echo "</option>";
+                                    }
                                 }
-                            }
-                        ?>
-                    </select>
-                    <input class="modifier" id ="button" type="submit" value="modifica">
-                </form>
+                            ?>
+                        </select>
+                        <input class="modifier" id ="button" type="submit" value="Modifica" style="margin-left: 20px;">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

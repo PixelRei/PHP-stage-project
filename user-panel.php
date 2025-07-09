@@ -22,7 +22,7 @@
         <br>
         <div class="others">
             <div>
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image:url(img/wallpaper2.jpg);">
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">Credenziali</div>
                     <div class="card-body">
                         <h5 class="card-title">Modifica le tue credenziali</h5>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div>
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image:url(img/wallpaper2.jpg);">
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">Questionario</div>
                     <div class="card-body">
                         <h5 class="card-title">Completa un questionario</h5>

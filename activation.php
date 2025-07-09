@@ -16,6 +16,6 @@
     $stmt->bindValue(':username', $_SESSION['abc'], PDO::PARAM_STR);
     $stmt->bindValue(':active', $status, PDO::PARAM_STR);
     $stmt->execute();
-    header("Location: index.php");
+    header("Location: admin-modify.php");
     exit;
 ?>

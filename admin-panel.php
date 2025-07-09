@@ -23,7 +23,7 @@
         <br>
         <div class="others">
             <div>
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image:url(img/wallpaper2.jpg);">
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">Tabella</div>
                     <div class="card-body">
                         <h5 class="card-title">Vedi tabella utenti</h5>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div>
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image:url(img/wallpaper2.jpg);">
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">Utenti</div>
                     <div class="card-body">
                         <h5 class="card-title">Modifica utenti</h5>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div>
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image:url(img/wallpaper2.jpg);">
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">Questionari</div>
                     <div class="card-body">
                         <h5 class="card-title">Vedi tabella questionari</h5>

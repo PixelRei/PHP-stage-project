@@ -47,6 +47,7 @@ h1{
 }
 .header{
     margin: 20px;
+    margin-bottom: 5px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -119,8 +120,14 @@ h1{
     flex-direction: row;
     gap: 50px;
 }
+.wall{
+    margin-bottom: 20px;
+    background-color: #0B192C;
+    border: 2px solid #0B192C;
+    border-radius: 15px;
+}
 .users form{
-    margin: 15px;
+    margin: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,7 +247,7 @@ a:hover {
     gap:10px;
 }
 select{
-    width: 170px;
+    width: 250px;
     height: 55px;
     font-size: 18px;
 }
@@ -293,4 +300,7 @@ select{
 .btn.btn-primary:hover{
     background-color: #4A249D;
     border: 2px solid #4A249D;
+}
+.card.text-bg-dark.mg-3{
+    background-color: #0B192C;
 }
