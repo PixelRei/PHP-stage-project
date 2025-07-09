@@ -21,12 +21,11 @@
             <div class="info">
                 <p id="user" class="credentials" style="text-align: left;">User selezionato: <b><?=$username?></b></p>
             </div>
-            <form method="POST" autocomplete="off">
+            <form action="activation.php" method="POST" autocomplete="off">
                 <div class="admin-changes">
                     <form method="POST" autocomplete="off">
                         <label for="username">Nuovo username:  <input class="input-log" type="text" name="username" required placeholder="New Username"></label>
                         <label for="password">Nuova password:  <input class="input-log" type="password" name="password" required placeholder="New Password"></label>
-                        <!--<a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>-->
                     </form>
                     <div class="status">
                         <p>Attiva/Disattiva account:</p>

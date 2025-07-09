@@ -38,6 +38,7 @@
                     <th>ID</th>
                     <th>USERNAME</th>
                     <th>IMAGE</th>
+                    <th>EDIT</th>
                 </tr>
                 <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                         <?php if($row['username'] != 'admin'): ?>
