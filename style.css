@@ -138,18 +138,20 @@ h1{
     margin: 0;
     padding: 50px;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(112, 75, 222, 0.5);
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
-    gap: 200px;
 }
 .admin-changes{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .admin-changes form{
+    margin-top: 30px;
     display: flex;
     text-decoration: none;
     flex-direction: column;
@@ -257,13 +259,14 @@ select{
 }
 .status{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: 15px;
 }
 .status form{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
 }
 .footer{
     font-family: 'comic sans';

@@ -16,27 +16,28 @@
         <link rel="icon" href="img/moon-icon.png">
     </head>
     <body>
+        <br><br><br>
         <div class="admin-modifies">
             <div class="info">
-                <p id="user" class="credentials">User selezionato: <?=$username?></p>
+                <p id="user" class="credentials" style="text-align: left;">User selezionato: <b><?=$username?></b></p>
             </div>
-            <div class="admin-changes">
-                <form method="POST" autocomplete="off">
-                <label for="username">Nuovo username:</label>
-                <input class="input-log" type="text" name="username" required placeholder="New Username">
-                <label for="password">Nuova password:</label>
-                <input class="input-log" type="password" name="password" required placeholder="New Password">
-                <a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>
-                </form>
-            </div>
-            <div class="status">
-                <p>Attiva/Disattiva account:
-                <form action="activation.php" method="POST">
-                    <label><input type="checkbox" checked name="stato" value="1">Attiva</label>
-                    <label><input type="checkbox" name="stato" value="0">Disattiva</label>
-                    <input type="submit" value="Modifica" id="button">
-                </form>
-            </div>
+            <form method="POST" autocomplete="off">
+                <div class="admin-changes">
+                    <form method="POST" autocomplete="off">
+                        <label for="username">Nuovo username:  <input class="input-log" type="text" name="username" required placeholder="New Username"></label>
+                        <label for="password">Nuova password:  <input class="input-log" type="password" name="password" required placeholder="New Password"></label>
+                        <!--<a id="created" href="index.php"><input id="button" type="submit" name="submit" value="Modifica"></a>-->
+                    </form>
+                    <div class="status">
+                        <p>Attiva/Disattiva account:</p>
+                        <form action="activation.php" method="POST">
+                            <label><input type="radio" checked name="stato" value="1">Attiva</label>
+                            <label><input type="radio" name="stato" value="0">Disattiva</label>
+                        </form>
+                    </div>
+                </div>
+                <input type="submit" value="Modifica" id="button" style="margin-left: 20px;">
+            </form>
         </div>
         <?php   
             if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){ //condition to see if the form was sent correctly
@@ -67,7 +68,8 @@
             exit;
             }
         ?>
-        <div class="footer" style="padding-top: 10px;">
+        <br><br>
+        <div class="alternative" style="padding-top: 10px;">
             <p style="color: white;">© 2025<a href="https://github.com/PixelRei" target="blank" style="font-size:18px; text-decoration: none;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px; text-decoration: none;">Logout</a></p>
         </div>
     </body>
