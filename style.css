@@ -18,11 +18,11 @@ h1{
 }
 @font-face {
     font-family: "Florence";
-    src: url(Florence\ PERSONAL\ USE\ ONLY!.ttf);
+    src: url(fonts/Florence\ PERSONAL\ USE\ ONLY!.ttf);
 }
 @font-face {
     font-family: 'Surprise';
-    src: url(Surprise\ Birthday.otf);
+    src: url(fonts/Surprise\ Birthday.otf);
 }
 .login-container{
     margin: 0;
