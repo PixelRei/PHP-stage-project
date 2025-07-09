@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>© 2025<a href="https://github.com/PixelRei" style="font-size:18px;">PixelRei<a></p>
+        <p>© 2025<a href="https://github.com/PixelRei" target="blank" style="font-size:18px;">PixelRei<a></p>
     </div>
 </body>
 </html>

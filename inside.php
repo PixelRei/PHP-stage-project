@@ -53,7 +53,7 @@
         </div>
         <br>
         <div class="alternative">
-            <p style="color: white;">© 2025<a href="https://github.com/PixelRei" style="font-size:18px;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px;">Logout</a></p>
+            <p style="color: white;">© 2025<a href="https://github.com/PixelRei" target="blank" style="font-size:18px;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px;">Logout</a></p>
         </div>
     </body>
     </html>
