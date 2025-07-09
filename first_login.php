@@ -26,7 +26,7 @@
     //controlling if array already exists, and then verify the hashed password
     //user has already been checked at a database level with the previous query (using WHERE)
 
-    if(password_verify($password, $user['password']) && $user['admin'] !== 0 && $user['active'] != 0){
+    if($password == $user['password'] && $user['admin'] !== 0 && $user['active'] != 0){
         $_SESSION['username'] = $username;
         header("Location: admin-panel.php");
         exit;
