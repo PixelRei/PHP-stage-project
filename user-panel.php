@@ -28,7 +28,7 @@
                         <h5 class="card-title">Modifica le tue credenziali</h5>
                         <p class="card-text">Modifica username o password e se ti va carica pure un'immagine che ti piace.</p>
                     </div>
-                    <a href="modify.php" class="btn btn-primary" style="background-color: ; text-decoration: none;">Vai!</a>
+                    <a href="modify.php" class="btn btn-primary">Vai!</a>
                 </div>
             </div>
             <div>
@@ -38,7 +38,7 @@
                         <h5 class="card-title">Completa un questionario</h5>
                         <p class="card-text">Completa un questionario rispondendo a delle semplici domande per ottenere punti Astro.</p>
                     </div>
-                    <a href="#.php" class="btn btn-primary" style="background-color: ; text-decoration: none;">Vai!</a>
+                    <a href="#.php" class="btn btn-primary">Vai!</a>
                 </div>
             </div>
         </div>
