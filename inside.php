@@ -9,13 +9,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View Users</title>
+        <title>Admin Panel - View Users</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="img/moon-icon.png">
     </head>
     <body>
+        <br><br><br><br><br><br>
         <?php
-            //collegamento al database
+            //connection to database
             try {
                 $hostname = '127.0.0.1';
                 $dbname = 'mydatabse';
@@ -48,11 +49,11 @@
                         <?php endif; ?>
                     <?php endwhile; ?>
             </table>
-            <br>
-            <div class="buttons">
-                <a href="logout.php" id="created"><button id="button">Logout</button></a>
-                <a href="modify.php" id="created"><button id="button">Modifica utente</button></a>
-            </div>
+            <a id="created" href="admin-panel.php"><button id="button">Indietro</button></a>
+        </div>
+        <br>
+        <div class="alternative">
+            <p style="color: white;">© 2025<a href="https://github.com/PixelRei" style="font-size:18px;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px;">Logout</a></p>
         </div>
     </body>
     </html>

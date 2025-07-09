@@ -5,39 +5,38 @@
     }
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if($username == "admin" && $password == "admin127001"){
+
+    //getting data from database
+    try {
+        $hostname = '127.0.0.1';
+        $dbname = 'mydatabse';
+        $user = 'root';
+        $pass = '';
+        $db = new PDO("mysql:host=$hostname;dbname=$dbname;charset=utf8mb4", $user, $pass);
+    } catch (PDOException $e) {
+        echo "Errore: ".$e->getMessage();
+        die();
+    };
+    $sql = 'SELECT id, username, password, active, admin FROM people WHERE username = :username';
+    $stmt = $db->prepare($sql);
+    $stmt->execute([
+        'username' => $username
+    ]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC); //getting the result of the query
+    //controlling if array already exists, and then verify the hashed password
+    //user has already been checked at a database level with the previous query (using WHERE)
+
+    if($user['admin'] != 0){
         $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        header("Location: admin.php");
+        //$_SESSION['password'] = $password; for users safety it's better to not save the password in sessions
+        header("Location: admin-panel.php");
         exit;
-    }else{
-        try {
-            $hostname = '127.0.0.1';
-            $dbname = 'mydatabse';
-            $user = 'root';
-            $pass = '';
-            $db = new PDO("mysql:host=$hostname;dbname=$dbname;charset=utf8mb4", $user, $pass);
-        } catch (PDOException $e) {
-            echo "Errore: ".$e->getMessage();
-            die();
-        };
-        $sql = 'SELECT id, username, password, active FROM people WHERE username = :username';
-        $stmt = $db->prepare($sql);
-        $stmt->execute([
-            'username' => $username
-        ]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC); //recupera il risultato della query
-        //controllo se l'array esiste, e verifica della password hashata
-        //l'utente è gia stato controllato a livello database con la query (WHERE)
-        if ($user && password_verify($password, $user['password']) && $user['active'] != 0) {
+    }elseif($user && password_verify($password, $user['password']) && $user['active'] != 0 && $user['admin'] == 0) { //verifying if the associative array exists, then checking tha password and status (if activated or not)
             $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
-            $_SESSION['id'] = $user['id'];
-            header('Location: inside.php');
+            header('Location: user-panel.php');
             exit;
-        } else {
-            header("Location: login_error.php");
-            exit;
-        }
+    }else{
+        header("Location: login_error.php");
+        exit;
     }
 ?>

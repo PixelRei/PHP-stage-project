@@ -19,8 +19,8 @@ if(!isset($_SESSION['username'])){
 <body>
     <div class="login-container">
         <div class="info">
-            <h1>logout effettuato</h1>
-            <a id="created" href="index.php"><button id="button">Torna al login</button></a> 
+            <h1>logout effettuato!</h1>
+            <center><a id="created" href="index.php"><button id="button" style="width: 100px; height: 50px;">Torna al login</button><a></center>
         </div>
     </div>
 </body>

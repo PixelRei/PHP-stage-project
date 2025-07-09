@@ -10,9 +10,12 @@
 <body>
     <div class="inside-container">
         <?php
-            echo "Credenziali errate / Account insesistente o sospeso";
+            echo "Credenziali errate o Account insesistente/sospeso";
             echo '<a id="created" href="index.php"><button id="bottone">Torna al login</button></a>';
         ?>
+    </div>
+    <div class="footer">
+        <p style="color: white;">© 2025<a href="https://github.com/PixelRei" style="font-size:18px;">PixelRei</a></p>
     </div>
 </body>
 </html>

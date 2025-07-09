@@ -53,5 +53,8 @@
             </div>
         </div>
     </div>
+    <div class="footer" style="padding-top: 10px;">
+        <p style="color: white;">© 2025<a href="https://github.com/PixelRei" style="font-size:18px; text-decoration: none;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px; text-decoration: none;">Logout</a></p>
+    </div>
 </body>
 </html>
