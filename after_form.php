@@ -16,8 +16,9 @@
 </head>
 <body>
     <div class="admin-modifies" style="font-size: 30px;">
-        <h1>thank you</h1>
-        <a href="user-panel.php">Go back</a>
+        <h1>Hai completato il questionario!</h1>
+        <p>Grazie per aver partecipato</p>
+        <a href="user-panel.php" id="created"><button id="button">Indietro</button></a>
     </div>
     <div class="footer" style="padding-top: 10px;">
         <p style="color: white;">© 2025<a href="https://github.com/PixelRei" target="blank" style="font-size:18px; text-decoration: none;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px; text-decoration: none;">Logout</a></p>

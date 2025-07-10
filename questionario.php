@@ -39,7 +39,7 @@
                         <label><input type="radio" name="sport" value="Atletica" required>Atletica</label> 
                     </div>
                 </ol>
-                <input type="submit" name="submit" id="button" value="Invia!" style="margin-left: 50px;">
+                <input type="submit" name="submit" id="button" value="Invia!" style="margin-left: 150px;">
             </form>
         </div>
     </div>

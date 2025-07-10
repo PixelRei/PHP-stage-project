@@ -45,11 +45,11 @@
                             <tr>
                                 <td> <?= $row['id'] ?></td>
                                 <td><?=$row['username'] ?></td>
-                                <td><img src="uploads/<?=$row['image'] ?>" width="10%" alt="null"></td>
+                                <td><img src="uploads/<?=$row['image'] ?>" width="10%"></td>
                                 <td><a href="admin-modify.php?user=<?=urlencode($row['username'])?>" style="text-decoration: none;">✏️</a></td>
                             </tr>
                         <?php endif; ?>
-                    <?php endwhile; ?>
+                <?php endwhile; ?>
             </table>
             <a id="created" href="admin-panel.php"><button id="button">Indietro</button></a>
         </div>
