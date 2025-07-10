@@ -65,7 +65,7 @@
             $stmt->bindValue(':active', $status, PDO::PARAM_STR);
             $stmt->bindValue(':old_username', $old_username, PDO::PARAM_STR);
             $stmt->execute();
-            header("Location: modify.php?id=" . urlencode($new_username));
+            header("Location: inside.php");
             exit;
             }
         ?>
