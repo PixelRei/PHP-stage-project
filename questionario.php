@@ -49,6 +49,9 @@
             $film = $_POST['film'];
             $music = $_POST['music'];
             $sport = $_POST['sport'];
+            $data = date("Y/m/d"); //returns the date
+            date_default_timezone_set("europe/rome");
+            $time = date("h:i:sa"); //returns the time
             try {
             $hostname = '127.0.0.1';
             $dbname = 'mydatabse';
@@ -59,12 +62,13 @@
                 echo "Errore: ".$e->getMessage();
                 die();
             };
-            $sql = "INSERT INTO questionario(username, film, music, sport) VALUES (:username, :film, :music, :sport)";
+            $sql = "INSERT INTO questionario(username, film, music, sport, data) VALUES (:username, :film, :music, :sport, :data)";
             $stmt = $db->prepare($sql);
             $stmt->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
             $stmt->bindValue(':film', $film, PDO::PARAM_STR);
             $stmt->bindValue(':music', $music, PDO::PARAM_STR);
             $stmt->bindValue(':sport', $sport, PDO::PARAM_STR);
+            $stmt->bindValue(':data', "$data  $time", PDO::PARAM_STR);
             $stmt->execute();
             header("Location: after_form.php");
             exit;

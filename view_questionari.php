@@ -26,7 +26,7 @@
                 echo $e->getMessage();
                 die();
             }
-            $sql = "SELECT username, film, music, sport FROM questionario";
+            $sql = "SELECT username, film, music, sport, data FROM questionario";
             $stmt = $db->prepare($sql);
             $stmt->execute();
         ?>
@@ -39,6 +39,7 @@
                     <th>FILM</th>
                     <th>MUSIC</th>
                     <th>SPORT</th>
+                    <th>TIME</TH>
                 </tr>
                 <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                         <?php if($row['username'] != 'admin'): ?>
@@ -47,6 +48,7 @@
                                 <td><?=$row['film'] ?></td>
                                 <td><?=$row['music']?></td>
                                 <td><?=$row['sport']?></td>
+                                <td><?=$row['data']?></td>
                             </tr>
                         <?php endif; ?>
                     <?php endwhile; ?>
