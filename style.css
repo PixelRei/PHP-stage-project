@@ -307,3 +307,12 @@ select{
 .card.text-bg-dark.mg-3{
     background-color: #0B192C;
 }
+.question{
+    margin: 20px 0;
+}
+.radioForm{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.radioForm input, .radioForm label{cursor: pointer;}
