@@ -38,13 +38,13 @@
                         <label><input type="radio" name="sport" value="Basket" required>Basket</label>
                         <label><input type="radio" name="sport" value="Atletica" required>Atletica</label> 
                     </div>
-                <ol>
-                <input type="submit" id="button" value="Invia!" style="margin-left: 170px; margin-top: 10px;">
+                </ol>
+                <input type="submit" name="submit" id="button" value="Invia!" style="margin-left: 50px;">
             </form>
         </div>
     </div>
     <?php
-        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){ //always put this condition to avoid submit problems
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){ //always put this condition to avoid submit problems
             $username = $_SESSION['username'];
             $film = $_POST['film'];
             $music = $_POST['music'];

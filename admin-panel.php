@@ -49,7 +49,7 @@
                         <h5 class="card-title">Vedi tabella questionari</h5>
                         <p class="card-text">Dai un'occhiata alle risposte degli utenti ai questionari da loro compilati.</p>
                     </div>
-                    <a href="#.php" class="btn btn-primary" style="background-color: ; text-decoration: none;">Vai!</a>
+                    <a href="view_questionari.php" class="btn btn-primary" style="background-color: ; text-decoration: none;">Vai!</a>
                 </div>
             </div>
         </div>
