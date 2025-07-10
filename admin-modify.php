@@ -3,8 +3,15 @@
     if(!isset($_SESSION['username'])){
         header("Location: index.php");
     }
-    $username = $_GET['user'];
-    $_SESSION['abc'] = $username; //they never gonna know :)
+    $username = '';
+    if(isset($_GET['user'])){
+        $username = htmlspecialchars($_GET['user']);
+        $_SESSION['abc'] = $username;
+    }elseif(isset($_GET['username'])){
+        $username = $_GET['username'];
+    }else{
+        echo "utente non riconosciuto";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,32 +28,26 @@
             <div class="info">
                 <p id="user" class="credentials" style="text-align: left;">User selezionato: <b><?=$username?></b></p>
             </div>
-            <form action="activation.php" method="POST" autocomplete="off">
+            <form action="" method="POST" autocomplete="off">
                 <div class="admin-changes">
-                    <form method="POST" autocomplete="off">
                         <label for="username">Nuovo username:  <input class="input-log" type="text" name="username" required placeholder="New Username"></label>
                         <label for="password">Nuova password:  <input class="input-log" type="password" name="password" required placeholder="New Password"></label>
-                    </form>
                     <div class="status">
                         <p>Attiva/Disattiva account:</p>
-                        <form action="activation.php" method="POST">
                             <label><input type="radio" checked name="stato" value="1">Attiva</label>
                             <label><input type="radio" name="stato" value="0">Disattiva</label>
-                        </form>
                     </div>
                 </div>
-                <input type="submit" value="Modifica" id="button" style="margin-left: 20px;">
+                <input type="submit" name="submit" value="Modifica" id="button" style="margin-left: 20px;">
             </form>
         </div>
         <?php   
             if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){ //condition to see if the form was sent correctly
-                
-            //update the session
             $new_username = $_POST['username'];
             $new_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $_SESSION['username'] = $new_username;
-            $_SESSION['password'] = $_POST['password'];
-            //and also the database
+            $old_username = $_SESSION['abc'];
+            $status = $_POST['stato'];
             try {   
                 $hostname = '127.0.0.1';
                 $dbname = 'mydatabse';
@@ -57,13 +58,14 @@
                 echo "error: ".$e->getMessage();
                 die();
             }
-            $sql = "UPDATE people SET username = :username, password = :password WHERE username = :old_username";
+            $sql = "UPDATE people SET username = :username, password = :password, active = :active WHERE username = :old_username";
             $stmt = $db->prepare($sql);
             $stmt->bindValue(':username', $new_username, PDO::PARAM_STR);
             $stmt->bindValue(':password', $new_password, PDO::PARAM_STR);
-            $stmt->bindValue(':old_username', $username, PDO::PARAM_STR);
+            $stmt->bindValue(':active', $status, PDO::PARAM_STR);
+            $stmt->bindValue(':old_username', $old_username, PDO::PARAM_STR);
             $stmt->execute();
-            header("Location: modify.php");
+            header("Location: modify.php?id=" . urlencode($new_username));
             exit;
             }
         ?>
