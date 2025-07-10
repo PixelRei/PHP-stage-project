@@ -13,6 +13,8 @@
         //writing in the database username and password using PDO (PHP Data Object)
         $Username = $_POST['username'];
         $Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $admin = 0;
+        $active = 1;
         try {
             $hostname = '127.0.0.1';
             $dbname = "mydatabse";
@@ -23,11 +25,14 @@
             echo "Errore: ".$e->getMessage();
             die();
         }
-        $sql = "INSERT INTO people(username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO people(username, password, active, admin) VALUES (:username, :password, :active, :admin)";
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':username', $Username, PDO::PARAM_STR);
-        $stmt->bindValue(':password', $Password, PDO::PARAM_STR);
-        $stmt->execute();
+        $stmt->execute([
+            'username' => $Username,
+            'password' => $Password,
+            'active' => $active,
+            'admin' => $admin
+        ]);
     ?>
     <div class="login-container">
         <div class="header">
