@@ -13,7 +13,6 @@
         //writing in the database username and password using PDO (PHP Data Object)
         $Username = $_POST['username'];
         $Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        //$Password = $_POST['password'];
         try {
             $hostname = '127.0.0.1';
             $dbname = "mydatabse";

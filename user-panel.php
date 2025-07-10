@@ -36,7 +36,7 @@
                     <div class="card-header">Questionario</div>
                     <div class="card-body">
                         <h5 class="card-title">Completa un questionario</h5>
-                        <p class="card-text">Completa un questionario rispondendo a delle semplici domande per ottenere punti Astro.</p>
+                        <p class="card-text">Completa un questionario rispondendo a delle semplici domande.</p>
                     </div>
                     <a href="questionario.php" class="btn btn-primary">Vai!</a>
                 </div>
