@@ -26,10 +26,19 @@
     //controlling if array already exists, and then verify the hashed password
     //user has already been checked at a database level with the previous query (using WHERE)
 
-    if($password == $user['password'] && $user['admin'] !== 0 && $user['active'] != 0){
-        $_SESSION['username'] = $username;
-        header("Location: admin-panel.php");
-        exit;
+    if($user['admin'] !== 0 && $user['active'] != 0){
+        if($user['username'] == 'admin' && $user['password'] == $password){
+            $_SESSION['username'] = $username;
+            header("Location: admin-panel.php");
+            exit;
+        }elseif($user['username'] != 'admin' && password_verify($password, $user['password'])){
+            $_SESSION['username'] = $username;
+            header("Location: admin-panel.php");
+            exit;
+        }else{
+            header("Location: login_error.php");
+            exit;
+        }
     }elseif($user && password_verify($password, $user['password']) && $user['active'] != 0 && $user['admin'] == 0) { //verifying if the associative array exists, then checking tha password and status (if activated or not)
             $_SESSION['username'] = $username;
             header('Location: user-panel.php');
