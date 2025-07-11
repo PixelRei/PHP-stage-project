@@ -3,6 +3,10 @@
     if(!isset($_SESSION['username'])){
         header("Location: index.php");
     }
+    if($_SESSION['admin'] == 0){
+        header("location: alert.php");
+        exit;
+    }
     $username = '';
     $value = 0;
     if(isset($_GET['user'])){

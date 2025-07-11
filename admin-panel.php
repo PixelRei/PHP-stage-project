@@ -4,6 +4,10 @@
         header("Location: index.php");
         exit;
     }
+    if($_SESSION['admin'] == 0){
+        header("location: alert.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

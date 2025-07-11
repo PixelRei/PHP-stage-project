@@ -29,10 +29,12 @@
     if($user['admin'] !== 0 && $user['active'] != 0){
         if($user['username'] == 'admin' && $user['password'] == $password){
             $_SESSION['username'] = $username;
+            $_SESSION['admin'] = 1;
             header("Location: admin-panel.php");
             exit;
         }elseif($user['username'] != 'admin' && password_verify($password, $user['password'])){
             $_SESSION['username'] = $username;
+            $_SESSION['admin'] = 1;
             header("Location: admin-panel.php");
             exit;
         }else{
@@ -41,6 +43,7 @@
         }
     }elseif($user && password_verify($password, $user['password']) && $user['active'] != 0 && $user['admin'] == 0) { //verifying if the associative array exists, then checking tha password and status (if activated or not)
             $_SESSION['username'] = $username;
+            $_SESSION['admin'] = 0;
             header('Location: user-panel.php');
             exit;
         }else{
