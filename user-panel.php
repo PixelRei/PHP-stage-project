@@ -41,6 +41,16 @@
                     <a href="questionario.php" class="btn btn-primary">Vai!</a>
                 </div>
             </div>
+            <div>
+                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Curiosità</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Vedi statistiche</h5>
+                        <p class="card-text">Dai un'occhiata a quali sono i linguaggi più utilizzati attualmente per progetti github.</p>
+                    </div>
+                    <a href="languages.php" class="btn btn-primary" style="background-color: ; text-decoration: none;">Vai!</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer" style="padding-top: 10px;">
