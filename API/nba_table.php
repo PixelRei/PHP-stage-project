@@ -19,6 +19,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 $data = json_decode($response, true);
+if($stats == 'total_rb'){$stats = 'totalRb';}
+elseif($stats == 'three_fg'){$stats = 'threeFg';}
 ?>
 <!DOCTYPE html>
 <html lang="en">
