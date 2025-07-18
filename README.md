@@ -4,7 +4,7 @@
 This is a project created by me during my internship period.
 It consists in a site connected to a database, which contains lots of important information.
 
-## How it starts
+## How it starts 🌟
 
 The first page has a login form, with also the option of creating an account if you don't have one.
 
@@ -20,7 +20,7 @@ And then...
 
 ![account created](screenshots/account-created.png)
 
-## Types of Account
+## Types of Account ⚙️
 
 There are two types of account which are the users and the admin.
 Inside the database, in a table, there is a "flag" named admin with a bool value that indicates if the account has admin permissions or not. If the value of admin is 0, which corresponds to false, the account is a normal user, otherwise if the value is greater than 0, the account has administrator permissions.
@@ -47,7 +47,7 @@ Where admin can:
 - Modify users setting (activate/deactivate account, make admin someone ecc.) 
 - View a table with users answers to the form 
 
-## Connection to database
+## Connection to database 🛢
 
 To connect PHP to the MySQL database I've used the PDO library (PHP Data OBjects).
 
