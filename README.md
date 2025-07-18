@@ -67,6 +67,8 @@ $sql = "INSERT INTO people(username, password, active, admin) VALUES (:username,
 We just have to write in the $sql variable the SQL query that we want to use.
 
 
+
+
 ## Security 🛡️
 
 To guarantee the security of the website all the password are hashed with the method password_hash() and then checked with password_verify().
