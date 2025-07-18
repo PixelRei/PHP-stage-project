@@ -31,7 +31,7 @@ The user panel looks like this:
 
 ![user panel](screenshots/user-panel.png)
 
-### What users can do
+Where users can do:
 
 - Modifiy the credentials
 - Complete a form
@@ -41,7 +41,7 @@ And the admin panel looks like this:
 
 ![admin panel](screenshots/admin-panel.png)
 
-### What admin can do
+Where admin can do:
 
 - View a table with all the users 
 - Modify users setting (activate/deactivate account, make admin someone ecc.) 
@@ -64,4 +64,4 @@ For example:
 ```php
 $sql = "INSERT INTO people(username, password, active, admin) VALUES (:username, :password, :active, :admin)";
 ```
-We just have write in the $sql variable the SQL query that we want to use.
+We just have to write in the $sql variable the SQL query that we want to use.
