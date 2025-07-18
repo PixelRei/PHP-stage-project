@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/moon-icon.png">
 </head>
 <body>
+	<br><br><br>
     <div class="login-container">
         <div class="modulo">
             <?php
@@ -23,9 +24,9 @@
                 <input id="button" type="submit" value="Create">
             </form>
         </div>
-        <a href="index.php"><img class="go-back" src=img/back-removebg-preview.png width="50" alt="torna al login"></a>
     </div>
-    <div class="footer">
+	<br><br>
+    <div class="alternative">
         <p style="color: white;">© 2025<a href="https://github.com/PixelRei" target="blank" style="font-size:18px;">PixelRei</a>   -   <a href="logout.php" style="font-size: 18px;">Logout</a></p>
     </div>
 </body>
