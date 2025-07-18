@@ -31,7 +31,7 @@ The user panel looks like this:
 
 ![user panel](screenshots/user-panel.png)
 
-Where users can do:
+Where users can:
 
 - Modifiy the credentials
 - Complete a form
@@ -41,7 +41,7 @@ And the admin panel looks like this:
 
 ![admin panel](screenshots/admin-panel.png)
 
-Where admin can do:
+Where admin can:
 
 - View a table with all the users 
 - Modify users setting (activate/deactivate account, make admin someone ecc.) 
@@ -65,3 +65,10 @@ For example:
 $sql = "INSERT INTO people(username, password, active, admin) VALUES (:username, :password, :active, :admin)";
 ```
 We just have to write in the $sql variable the SQL query that we want to use.
+
+
+## Security 🛡️
+
+To guarantee the security of the website all the password are hashed with the method password_hash() and then checked with password_verify().
+
+And to avoid SQL Injection all the parameters are binded when creating queries.
