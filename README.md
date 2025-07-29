@@ -79,6 +79,10 @@ The second one is used to store the answers to the forms completed by the users
 
 ![questionario table](screenshots/questionario.png)
 
+## API Rest
+
+We have used two API for the project, one for the stats about the most used languages on github, and the other one for specific NBA stats. 
+
 ## Security 🛡️
 
 To guarantee the security of the website all the password are hashed with the method password_hash() and then checked with password_verify().
