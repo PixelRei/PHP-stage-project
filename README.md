@@ -66,8 +66,18 @@ $sql = "INSERT INTO people(username, password, active, admin) VALUES (:username,
 ```
 We just have to write in the $sql variable the SQL query that we want to use.
 
+The database consists of two tables: people
+and questionario.
 
+### Database tables
 
+The first table is used to store users credentials and other info: id, username, password, images uploaded, active and admin flags. 
+
+![people table](screenshots/people.png)
+
+The second one is used to store the answers to the forms completed by the users
+
+![questionario table](screenshots/questionario.png)
 
 ## Security 🛡️
 
