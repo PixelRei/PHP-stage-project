@@ -145,6 +145,15 @@ The `sortBy` parameter accepts the following values:
 
 There is no json file directly used as I've already used the json_decode function in php.
 
+The first page looks like this:
+
+![nba first page](screenshots/Immagine%202025-08-02%20201220.png)
+
+
+And the results of the stats searched look like this:
+
+![nba stats](screenshots/nbatable.png)
+
 ## Security 🛡️
 
 To guarantee the security of the website all the password are hashed with the method password_hash() and then checked with password_verify().
