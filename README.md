@@ -83,7 +83,7 @@ The second one is used to store the answers to the forms completed by the users
 
 #### The stats are served from
 
-```http
+```
   https://api.server.nbaapi.com/
 ```
 
@@ -119,7 +119,7 @@ The second one is used to store the answers to the forms completed by the users
 
 #### Example request
 
-```http
+```
   curl -X GET \
   'https://api.server.nbaapi.com/api/playeradvancedstats?page=1&pageSize=20&sortBy=win_shares&ascending=false&season=2025&team=MIL' \
   -H 'accept: application/json'
