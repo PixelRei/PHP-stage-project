@@ -81,7 +81,69 @@ The second one is used to store the answers to the forms completed by the users
 
 ## API Rest
 
-We have used two API for the project, one for the stats about the most used languages on github, and the other one for specific NBA stats. 
+#### The stats are served from
+
+```http
+  https://api.server.nbaapi.com/
+```
+
+### What stats we can get
+
+- Player Totals: Provides season-based totals such as points, assists, rebounds, games played, shooting percentages, and more traditional statistics.
+
+### Query parameters
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `season` | `integer` | **Optional**, Filters by a specific season |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `team`      | `string` | **Optional**, Filter by team abbreviation |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `playerId`      | `string` | **Optional**. Filter by player's unique ID |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `isPlayoff`      | `boolean` | **Optional**. Filter for a playoff statistics (true) or a regular season (false) |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `page`      | `integer` | **Optional**. Page number to retrieve |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `pageSize`      | `integer` | **Optional**. Number of record per page |
+
+#### Example request
+
+```http
+  curl -X GET \
+  'https://api.server.nbaapi.com/api/playeradvancedstats?page=1&pageSize=20&sortBy=win_shares&ascending=false&season=2025&team=MIL' \
+  -H 'accept: application/json'
+```
+
+### Sorting Options for Advanced Stats
+
+The `sortBy` parameter accepts the following values:
+- `games` - Games played
+- `minutes_played` - Total minutes played
+- `ts_percent` - True Shooting Percentage
+- `total_rb_percent` - Total Rebound Percentage
+- `usage_percent` - Usage Percentage
+- `offensive_ws` - Offensive Win Shares
+- `defensive_ws` - Defensive Win Shares
+- `win_shares` - Total Win Shares (default)
+- `win_shares_per` - Win Shares per 48 minutes
+- `offensive_box` - Offensive Box Plus/Minus
+- `defensive_box` - Defensive Box Plus/Minus
+- `box` - Total Box Plus/Minus  
+- `vorp` - Value Over Replacement Player
+- `season` - Season year
+
+There is no json file directly used as I've already used the json_decode function in php.
 
 ## Security 🛡️
 
