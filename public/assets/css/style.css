@@ -1,0 +1,318 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 37px;
+    font-family: 'Surprise';
+}
+h1{
+    font-family: 'Florence';
+    font-size: 50px;
+}
+@font-face {
+    font-family: "Florence";
+    src: url(../fonts/Florence\ PERSONAL\ USE\ ONLY!.ttf);
+}
+@font-face {
+    font-family: 'Surprise';
+    src: url(../fonts/Surprise\ Birthday.otf);
+}
+.login-container{
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
+}
+.error{
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
+}
+.header{
+    margin: 20px;
+    margin-bottom: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modulo{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+.panel{
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
+    flex-direction: row;
+    gap: 120px;
+    width: 70%;
+}
+.info{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+.change{
+    padding-bottom: 68px;
+}
+.change form{
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    gap: 15px;
+}
+.inside-container{
+    margin: 0;
+    padding: 35px;
+    background-color: rgba(112, 75, 222, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+.buttons{
+    display: flex;
+}
+.image-uploader{
+    margin: 0;
+    width: 20%;
+}
+.admin-panel{
+    padding: 20px;
+    background-color: rgba(112, 75, 222, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+.others{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.wall{
+    margin-bottom: 20px;
+    background-color: #0B192C;
+    border: 2px solid #0B192C;
+    border-radius: 15px;
+}
+.users form{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.admin-modifies{
+    margin: 0;
+    padding: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 75, 222, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(112, 75, 222, 0.5);
+}
+.admin-changes{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.admin-changes form{
+    margin-top: 30px;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    gap: 15px;
+}
+table{
+    background-image: url(../img/wallpaper2.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+td, th, table{
+    border: 2px solid black;
+}
+a {
+    margin: 10px;   
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    text-decoration: underline;
+    color: #dcdcdc;
+}
+.credentials{
+    margin-top: 15px;
+}
+#username,
+#password{
+    margin:5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 3px black;
+    height: 20px;
+}
+#button{
+    margin: 20px;
+    margin-left: 50px;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(120, 16, 218);
+    color: white;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px black;
+}
+#button:hover{
+    background-color: rgb(153, 73, 227);
+}
+#created{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#bottone{
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(120, 16, 218);
+    color: white;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 2px 5px 3px black; 
+}
+.go-back{
+    position: fixed;
+    bottom: 60px;
+    right: 500px;
+}
+.go-back:hover{
+    cursor: pointer;
+}
+.image{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.808);
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap:10px;
+}
+select{
+    width: 250px;
+    height: 55px;
+    font-size: 18px;
+}
+.input-log{
+    border-radius: 10px;
+    height: 20px;
+}
+.status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.status form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.footer{
+    font-family: 'comic sans';
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    text-align: center;
+}
+.footer a::after{
+    text-decoration: none;
+}
+.alternative{
+    font-family: 'comic sans';
+    font-size: 18px;
+    bottom: 0;
+    background-color: black;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+.btn.btn-primary{
+    background-color: #4F1787;
+    border: 2px solid #4F1787; 
+    text-decoration: none;
+}
+.btn.btn-primary:hover{
+    background-color: #4A249D;
+    border: 2px solid #4A249D;
+}
+.card.text-bg-dark.mg-3{
+    background-color: #0B192C;
+}
+.question{
+    margin: 20px 0;
+}
+.radioForm{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.radioForm input, .radioForm label{cursor: pointer;}

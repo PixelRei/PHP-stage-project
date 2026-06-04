@@ -4,21 +4,32 @@
 This is a project created by me during my internship period.
 It consists in a site connected to a database, which contains lots of important information.
 
+## Project structure
+
+The root folder is intentionally small:
+
+- `index.php` redirects to the application entry point.
+- `public/` contains the PHP pages served by the browser.
+- `public/assets/` contains CSS, images and fonts.
+- `public/uploads/` contains uploaded user images.
+- `public/api/` contains the NBA API demo pages.
+- `docs/` contains screenshots and legacy variants used as documentation/reference.
+
 ## How it starts 🌟
 
 The first page has a login form, with also the option of creating an account if you don't have one.
 
-![Login form](screenshots/login.png)
+![Login form](docs/screenshots/login.png)
 
 If you need to create an account you can click on the option under the login button and insert your credentials in the next page. The username and the password will be saved in a database.
 
 So you'll see...
 
-![creating account](screenshots/creating-account.png)
+![creating account](docs/screenshots/creating-account.png)
 
 And then...
 
-![account created](screenshots/account-created.png)
+![account created](docs/screenshots/account-created.png)
 
 ## Types of Account ⚙️
 
@@ -29,7 +40,7 @@ According to what user logged in, there are two pages with different activities.
 
 The user panel looks like this:
 
-![user panel](screenshots/user-panel.png)
+![user panel](docs/screenshots/user-panel.png)
 
 Where users can:
 
@@ -39,7 +50,7 @@ Where users can:
 
 And the admin panel looks like this: 
 
-![admin panel](screenshots/admin-panel.png)
+![admin panel](docs/screenshots/admin-panel.png)
 
 Where admin can:
 
@@ -73,11 +84,11 @@ and questionario.
 
 The first table is used to store users credentials and other info: id, username, password, images uploaded, active and admin flags. 
 
-![people table](screenshots/people.png)
+![people table](docs/screenshots/people.png)
 
 The second one is used to store the answers to the forms completed by the users
 
-![questionario table](screenshots/questionario.png)
+![questionario table](docs/screenshots/questionario.png)
 
 ## API Rest
 
@@ -147,12 +158,12 @@ There is no json file directly used as I've already used the json_decode functio
 
 The first page looks like this:
 
-![nba first page](screenshots/Immagine%202025-08-02%20201220.png)
+![nba first page](docs/screenshots/Immagine%202025-08-02%20201220.png)
 
 
 And the results of the stats searched look like this:
 
-![nba stats](screenshots/nbatable.png)
+![nba stats](docs/screenshots/nbatable.png)
 
 ## Security 🛡️
 
